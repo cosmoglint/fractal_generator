@@ -8,7 +8,7 @@ function setup() {
   p  = PI;
   var angle = PI/4;
 
-  slid = createSlider(0,3*p ,100,0.01);
+  slid = createSlider(-p,p ,100,0.01);
 
 
 }
@@ -42,6 +42,7 @@ function draw() {
 
   a = map(mouseX,0,width,-1*p,1*p,true);
   b = map(mouseY,0,width,-1*p,1*p,true);
+  c = slid.value();
 
   recu(n);
   // recu(2*n);
@@ -55,7 +56,7 @@ function recu(n){
   line(0,0,0,-n);
   // rect(0,-n,n,n);
   translate(0,-n);
-  if (n>50) {
+  if (n>53) {
     push();
     rotate(a);
     recu(n*0.6);
@@ -70,6 +71,14 @@ function recu(n){
     pop();
     push();
     rotate(-b);
+    recu(n*0.6);
+    pop();
+    push();
+    rotate(c);
+    recu(n*0.6);
+    pop();
+    push();
+    rotate(-c);
     recu(n*0.6);
     pop();
 
