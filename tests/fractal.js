@@ -40,8 +40,8 @@ function draw() {
   // console.log(((4*PI)/(360-i)));
   // i = i + 1;
 
-  a = map(mouseX,0,width,-5*p,5*p,true);
-  b = map(mouseY,0,width,-5*p,5*p,true);
+  a = map(mouseX,0,width,-1*p,1*p,true);
+  b = map(mouseY,0,width,-1*p,1*p,true);
 
   recu(n);
   // recu(2*n);
@@ -55,21 +55,21 @@ function recu(n){
   line(0,0,0,-n);
   // rect(0,-n,n,n);
   translate(0,-n);
-  if (n>19) {
+  if (n>50) {
     push();
-    rotate(a/2);
+    rotate(a);
     recu(n*0.6);
     pop();
     push();
-    rotate(-a/2);
+    rotate(-a);
     recu(n*0.6);
     pop();
     push();
-    rotate(b/2);
+    rotate(b);
     recu(n*0.6);
     pop();
     push();
-    rotate(-b/2);
+    rotate(-b);
     recu(n*0.6);
     pop();
 
